@@ -20,8 +20,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	}
 
 	@Transactional
-	public void addUserDetails(UserDetails user) {
-		this.userDetailsDAO.addUserDetails(user);
+	public UserDetails addUserDetails(UserDetails user) {
+		return this.userDetailsDAO.addUserDetails(user);
 	}
 
 	@Transactional

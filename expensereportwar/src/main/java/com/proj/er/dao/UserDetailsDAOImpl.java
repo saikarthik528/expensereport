@@ -22,11 +22,12 @@ public class UserDetailsDAOImpl implements UserDetailsDAO {
         this.sessionFactory = sf;
     }
 	
-	public void addUserDetails(UserDetails user) {
+	public UserDetails addUserDetails(UserDetails user) {
 		Session session = this.sessionFactory.getCurrentSession();
 		user.setCreatedOn(new Date(System.currentTimeMillis()));
         session.persist(user);
         logger.info("User saved successfully, User Details=" + user);
+        return user;
 	}
 
 	public void updateUserDetails(UserDetails user) {

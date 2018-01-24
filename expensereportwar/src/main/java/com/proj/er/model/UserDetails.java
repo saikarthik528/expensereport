@@ -135,5 +135,12 @@ public class UserDetails implements Serializable {
 			return false;
 		return true;
 	}
+	
+	public void updateFields(UserDetails userDetails) {
+		this.setFirstName(userDetails.getFirstName());
+		this.setLastName(userDetails.getLastName());
+		this.setEmail(userDetails.getEmail());
+		this.setTelephoneNum(userDetails.getTelephoneNum());
+	}
 
 }
